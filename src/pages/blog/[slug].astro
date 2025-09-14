@@ -2,7 +2,10 @@
 import { getCollection, render, type CollectionEntry } from "astro:content";
 import BlogLayout from "@/layouts/blog-layout.astro";
 import Sparator from "@/components/sparator.astro";
+import Section from "@/components/section.astro";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 
 type Post = { entry: CollectionEntry<"posts"> };
 
@@ -19,6 +22,12 @@ const { Content } = await render(entry);
 ---
 
 <BlogLayout title={entry.data.title}>
+  <Sparator />
+  <Section class="p-3">
+    <div class="flex items-center justify-between">
+      <a href="/blog"> <ArrowLeft size={32} /></a>
+    </div>
+  </Section>
   <Sparator />
   <div class="section container p-3">
     <div class="screen-line-after pb-3 space-x-2">

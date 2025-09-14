@@ -18,8 +18,8 @@ const posts = await getCollection("posts", ({ data }) => {
     </p>
   </Section>
   <Sparator />
-  <Section>
-    <div class="grid grid-cols-2">
+  <Section class="p-3">
+    <div class="grid md:grid-cols-2 gap-3">
       {
         posts.map((post) => (
           <a
@@ -39,7 +39,9 @@ const posts = await getCollection("posts", ({ data }) => {
                 </p>
               </div>
             </div>
-            <ArrowUpRight size={16} />
+            <div class="w-5">
+              <ArrowUpRight size={16} />
+            </div>
           </a>
         ))
       }
