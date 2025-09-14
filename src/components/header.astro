@@ -9,27 +9,40 @@ const menu = [
     href: "/",
   },
   {
-    label: "Projects",
-    href: "#projects",
+    label: "Experience",
+    href: "#experience",
+  },
+  {
+    label: "Blog",
+    href: "/blog",
   },
 ];
 ---
 
 <header class="bg-background fixed w-full top-0 z-50">
   <div class="container section p-3 flex items-center justify-between">
-    <h4 class="font-black text-2xl">Haidar</h4>
+    <h4 class="font-black text-2xl">
+      <a href="/">
+        <img class="w-8 invert dark:invert-0" src="/favicon.svg" alt="icon" />
+      </a>
+    </h4>
     <div class="flex">
       <div class="hidden md:block">
         {
           menu.map((item) => (
-            <a href={item.href} class="hover:cursor-pointer">
-              <Button variant={"link"}>{item.label}</Button>
-            </a>
+            <Button variant={"link"}>
+              <a href={item.href} class="hover:cursor-pointer">
+                {item.label}
+              </a>
+            </Button>
           ))
         }
       </div>
+
       <ModeToggle client:load />
-      <MobileMenu menu={menu} client:load />
+      <div class="md:hidden block">
+        <MobileMenu menu={menu} client:load />
+      </div>
     </div>
   </div>
 </header>

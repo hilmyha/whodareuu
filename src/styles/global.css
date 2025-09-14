@@ -1,6 +1,7 @@
 @import url(https://fonts.bunny.net/css?family=fira-code:500,600,700|inter:400,500,600,700,900);
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -142,7 +143,10 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/50 scroll-smooth;
+  }
+  html {
+    @apply scroll-smooth;
   }
   body {
     @apply bg-background text-foreground;

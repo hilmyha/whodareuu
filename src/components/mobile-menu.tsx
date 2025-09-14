@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -19,7 +18,7 @@ interface MobileMenuProps {
 export default function MobileMenu({ menu }: { menu: MobileMenuProps[] }) {
   return (
     <Sheet>
-      <SheetTrigger className="md:hidden block">
+      <SheetTrigger>
         <Button variant={"ghost"} size={"icon"}>
           <Menu />
         </Button>
