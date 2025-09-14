@@ -25,8 +25,8 @@ export default function MobileMenu({ menu }: { menu: MobileMenuProps[] }) {
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
-          <SheetTitle>Are you absolutely sure?</SheetTitle>
-          <nav className="mt-4 flex flex-col justify-start gap-2">
+          <SheetTitle></SheetTitle>
+          <nav className="mt-6 flex flex-col justify-start gap-2">
             {menu.map((item) => (
               <a href={item.href} className="w-full hover:cursor-pointer">
                 <Button variant={"secondary"} className="w-full">{item.label}</Button>
