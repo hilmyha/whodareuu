@@ -1,0 +1,19 @@
+---
+import clsx from "clsx";
+const { title, id } = Astro.props;
+---
+
+<section
+  id={id}
+  class={clsx("container section flex flex-col gap-3", Astro.props.class)}
+>
+  {title && <h2 class="screen-line-after text-2xl lg:text-4xl pb-3">{title}</h2>}
+  <slot />
+  {
+    Astro.slots.has("footer") && (
+      <div class="screen-line-before pt-3 text-muted-foreground">
+        <slot name="footer" />
+      </div>
+    )
+  }
+</section>

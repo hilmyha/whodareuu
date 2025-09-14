@@ -1,0 +1,35 @@
+---
+import { Button } from "@/components/ui/button";
+import { ModeToggle } from "@/components/mode-toggle";
+import MobileMenu from "@/components/mobile-menu";
+
+const menu = [
+  {
+    label: "Portfolio",
+    href: "/",
+  },
+  {
+    label: "Projects",
+    href: "#projects",
+  },
+];
+---
+
+<header class="bg-background fixed w-full top-0 z-50">
+  <div class="container section p-3 flex items-center justify-between">
+    <h4 class="font-black text-2xl">Haidar</h4>
+    <div class="flex">
+      <div class="hidden md:block">
+        {
+          menu.map((item) => (
+            <a href={item.href} class="hover:cursor-pointer">
+              <Button variant={"link"}>{item.label}</Button>
+            </a>
+          ))
+        }
+      </div>
+      <ModeToggle client:load />
+      <MobileMenu menu={menu} client:load />
+    </div>
+  </div>
+</header>
