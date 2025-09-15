@@ -3,4 +3,4 @@ Allow: /
 Disallow: /cv.pdf
 Disallow: /bnsp=jwd-hilmy-haidar.pdf
 
-Sitemap: https://domain.com/sitemap-index.xml
+Sitemap: https://whodareuu.my.id/sitemap-index.xml
