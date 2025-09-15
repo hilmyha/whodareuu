@@ -12,7 +12,7 @@ const posts = await getCollection("posts", ({ data }) => {
 
 <BaseLayout title="Blog">
   <Section title="Haidar's writings" class="mt-14 px-3 py-12">
-    <p class="text-muted-foreground w-1/2">
+    <p class="text-muted-foreground lg:w-1/2">
       I write about the web, programming, and sometimes my life experiences.
       Enjoy reading!
     </p>
@@ -43,7 +43,7 @@ const posts = await getCollection("posts", ({ data }) => {
               <ArrowUpRight size={16} />
             </div>
           </a>
-        ))
+        )).reverse()
       }
     </div>
   </Section>
