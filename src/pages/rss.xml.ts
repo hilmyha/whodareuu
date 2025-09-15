@@ -10,7 +10,7 @@ export async function GET(context: any) {
     description:
       "I write about the web, programming, and sometimes my life experiences. Enjoy reading!",
     site: context.site, // otomatis ambil base URL dari astro.config.mjs
-    stylesheet: "/rss/styles.xsl", // opsional, kalau mau styling di browser
+    stylesheet: "/rss/pretty-feed-v3.xsl", // opsional, kalau mau styling di browser
     items: posts.map((post) => ({
       title: post.data.title,
       pubDate: post.data.date,
