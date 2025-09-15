@@ -15,7 +15,7 @@ export async function GET(context: any) {
       title: post.data.title,
       pubDate: post.data.date,
       description: post.data.description, // pastikan di frontmatter md ada `excerpt`
-      link: `/blog/${post.slug}`,
+      link: `/blog/${post.data.slug}`,
     })),
   });
 }
