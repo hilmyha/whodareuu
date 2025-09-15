@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "icon": "Linkedin",
+    "title": "Linkedin",
+    "username": "hilmyahmadhaidar",
+    "link": "https://www.linkedin.com/in/hilmy-ahmad-haidar-a3b8b020b/"
+  },
+  {
+    "id": 2,
+    "icon": "Github",
+    "title": "Github",
+    "username": "hilmyha",
+    "link": "https://github.com/hilmyha"
+  }
+]

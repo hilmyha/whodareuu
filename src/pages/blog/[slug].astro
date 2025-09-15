@@ -4,7 +4,6 @@ import BlogLayout from "@/layouts/blog-layout.astro";
 import Sparator from "@/components/sparator.astro";
 import Section from "@/components/section.astro";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 
 type Post = { entry: CollectionEntry<"posts"> };
@@ -12,7 +11,7 @@ type Post = { entry: CollectionEntry<"posts"> };
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
   return posts.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { slug: entry.data.slug },
     props: { entry },
   }));
 }

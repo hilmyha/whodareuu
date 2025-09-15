@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "icon": "GraduationCap",
+    "title": "Telkom University Purwokerto",
+    "grade": "Bachelor of Informatics Engineering",
+    "gpa": "3.76",
+    "start": "2020",
+    "end": "2024",
+    "resume": "/cv.pdf"
+  }
+]

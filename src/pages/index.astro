@@ -1,9 +1,17 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "@/layouts/base-layout.astro";
 import Hero from "@/components/hero.astro";
 import Sparator from "@/components/sparator.astro";
 import Section from "@/components/section.astro";
 import ExperienceCard from "@/components/experience-card.tsx";
+
+const experience = await getCollection("experiences");
+const certificate = await getCollection("certificates");
+const social = await getCollection("socials");
+const contact = await getCollection("contacts");
+const education = await getCollection("educations");
+
 import {
   ArrowUpRight,
   Terminal,
@@ -14,35 +22,15 @@ import {
   GraduationCap,
 } from "lucide-react";
 
-const contact = [
-  {
-    icon: Terminal,
-    body: "Software Engineer",
-  },
-  {
-    icon: MapPin,
-    body: "South Jakarta, Jakarta, Indonesia",
-  },
-  {
-    icon: Mail,
-    body: "hilmyahmadhaidar@gmail.com",
-  },
-];
-
-const social = [
-  {
-    icon: Linkedin,
-    title: "Linkedin",
-    username: "hilmyahmadhaidar",
-    link: "https://www.linkedin.com/in/hilmy-ahmad-haidar-a3b8b020b/",
-  },
-  {
-    icon: Github,
-    title: "Github",
-    username: "hilmyha",
-    link: "https://github.com/hilmyha",
-  },
-];
+const icons = {
+  ArrowUpRight,
+  Terminal,
+  MapPin,
+  Mail,
+  Linkedin,
+  Github,
+  GraduationCap,
+};
 
 const stack = [
   "php",
@@ -57,117 +45,6 @@ const stack = [
   "postgresql",
   "redis",
 ];
-
-const education = [
-  {
-    icon: GraduationCap,
-    title: "Telkom University Purwokerto",
-    grade: "Bachelor of Informatics Engineering",
-    gpa: "3.76",
-    start: "2020",
-    end: "2024",
-    resume: "/cv.pdf",
-  },
-];
-
-const experience = [
-  {
-    company: "PT. Pedagang Aset Kripto",
-    roles: [
-      {
-        role: "Frontend Developer",
-        start: "Apr 2025",
-        end: "Present",
-        tasks: [
-          "Maintaining a web based Exchange system with Laravel Framework.",
-          "Integrated payment gateway APIs to manage fiat deposit and withdrawal flows.",
-          "Integrated external custody APIs for managing crypto asset operations including deposit address generation, balance tracking, and withdrawal execution.",
-          "Integrated Laravel’s job and queue system (backed by Redis) to support a custom-built matching engine for buy/sell order execution.",
-          "Utilized Laravel Horizon for monitoring queued jobs and background processing.",
-          "Implemented client-side interactivity using jQuery AJAX for real-time trading interactions.",
-          "Integrated regulatory APIs include Indonesian Coin Custodian (ICC) for handling crypto asset transactions, Komisi Kliring Indonesia (KKI) for fiat currency transaction compliance, and Central Financial X (CFX) for trade lifecycle processing and regulatory reporting.",
-        ],
-      },
-    ],
-  },
-  {
-    company: "GaleriMedika",
-    roles: [
-      {
-        role: "Fullstack Developer",
-        start: "Nov 2024",
-        end: "Mar 2025",
-        tasks: [
-          "I upgraded a web based E-Commerce with Opencart framework.",
-          "The website i created is an online shopping platform for Galeri Medika's customers, equipped with social login capabilities, a reliable courier delivery system, and a secure payment processing system.",
-          "Develop an internal apps in Galeri Medika with Odoo Framework.",
-          "In Galeri Medika's internal applications, I developed custom modules using Odoo, including a Doctor Scheduling System to manage and display doctor availability across Tangerang and South Tangerang, as well as a Courier Handover Module that ensures package verification before being handed over to couriers based on invoice details.",
-        ],
-      },
-    ],
-  },
-  {
-    company: "PT. CAZH Teknologi Inovasi",
-    roles: [
-      {
-        role: "Fullstack Developer Intern",
-        start: "Jul 2023",
-        end: "Sep 2023",
-        tasks: [
-          "I built a human resource management web based app with Laravel framework with Livewire.",
-          "My human resource management web application is used to manage employee tasks, which is able to manage order process and be able to monitor the order processing process for staff.",
-        ],
-      },
-    ],
-  },
-  {
-    company: "Institut Teknologi Telkom Purwokerto",
-    roles: [
-      {
-        role: "Laboratory Assistant",
-        start: "2022",
-        end: "2023",
-        tasks: [
-          "I teach Database Management System to fellow students here at ITT Purwokerto.",
-          "During teaching, there are a lot of experiences gained, one of which can help other students in learning about database management systems, and practicing leadership for myself.",
-        ],
-      },
-      {
-        role: "Laboratory Assistant",
-        start: "2021",
-        end: "2022",
-        tasks: [
-          "I teach Programming Algorithms to fellow students here at ITT Purwokerto.",
-          "During teaching, there are a lot of experiences gained, one of which can help other students in learning about programming algorithms, and practicing leadership for myself.",
-        ],
-      },
-    ],
-  },
-];
-
-const certificate = [
-  {
-    logo: "https://media.licdn.com/dms/image/v2/C560BAQFBZUziVzn6KA/company-logo_200_200/company-logo_200_200/0/1630642701809?e=1760572800&v=beta&t=wO4gxfBRFZg2Dg14U1mIWdayJFz3-ZS1lYm955oy3aQ",
-    title: "Junior Web Developer",
-    company: "Badan Nasional Sertiifikasi Profesi (BNSP)",
-    date: "Jan 2024",
-    link: "/bnsp-jwd-hilmy-haidar.pdf",
-  },
-  {
-    logo: "https://media.licdn.com/dms/image/v2/D560BAQGgNsF5f_M0NA/company-logo_200_200/company-logo_200_200/0/1689865136313/coding_studio_id_logo?e=1760572800&v=beta&t=7STn4majWMtqaj8Ss1wrxifCGXo5oux2zpswGQds1Z8",
-    title: "Mahir Membuat Website dengan Laravel 9",
-    company: "Coding Studio",
-    date: "May 2023",
-    link: "https://member.codingstudio.id/certificate/75A3A2BFB6-75A91EDAE6-7597B771B9",
-  },
-  {
-    logo: "https://media.licdn.com/dms/image/v2/D560BAQGgNsF5f_M0NA/company-logo_200_200/company-logo_200_200/0/1689865136313/coding_studio_id_logo?e=1760572800&v=beta&t=7STn4majWMtqaj8Ss1wrxifCGXo5oux2zpswGQds1Z8",
-    title: "Mahir membuat website responsif",
-    company: "Coding Studio",
-    date: "Aug 2021",
-    link: "https://member.codingstudio.id/certificate/75A3A2BFB6-7597B7BDE6-7597B771B9",
-  },
-];
 ---
 
 <BaseLayout title="Portfolio">
@@ -175,42 +52,52 @@ const certificate = [
   <Sparator />
   <Section class="p-3">
     {
-      contact.map((item) => (
-        <div class="flex items-center gap-3">
-          <div class="p-1.5">{item.icon && <item.icon size={16} />}</div>
-          <p class="text-muted-foreground">{item.body}</p>
-        </div>
-      ))
+      contact.map(({ data }) => {
+        const Icon = icons[data.icon as keyof typeof icons];
+        return (
+          <div class="flex items-center gap-3">
+            <div class="p-1.5">
+              <Icon size={16} />
+            </div>
+            <p class="text-muted-foreground">{data.body}</p>
+          </div>
+        );
+      })
     }
   </Section>
   <Sparator />
   <Section class="p-3">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
       {
-        social.map((item) => (
-          <a
-            href={item.link}
-            class="group flex items-start justify-between gap-3 p-3 border"
-          >
-            <div class="flex items-center gap-4">
-              <item.icon size={32} className="text-muted-foreground" />
-              <div class="grid grid-cols-1">
-                <p class="font-semibold group-hover:underline">{item.title}</p>
-                <p class="text-sm text-muted-foreground">{item.username}</p>
+        social.map(({ data }) => {
+          const Icon = icons[data.icon as keyof typeof icons];
+          return (
+            <a
+              href={data.link}
+              class="group flex items-start justify-between gap-3 p-3 border"
+            >
+              <div class="flex items-center gap-4">
+                <Icon size={32} className="text-muted-foreground" />
+                <div class="grid grid-cols-1">
+                  <p class="font-semibold group-hover:underline">
+                    {data.title}
+                  </p>
+                  <p class="text-sm text-muted-foreground">{data.username}</p>
+                </div>
               </div>
-            </div>
-            <ArrowUpRight size={16} />
-          </a>
-        ))
+              <ArrowUpRight size={16} />
+            </a>
+          );
+        })
       }
     </div>
   </Section>
   <Sparator />
   <Section title="About" class="p-3">
     <p class="">
-      Hi, my name Hilmy Ahmad Haidar, you can call me Haidar. I love turning ideas into functional apps, working
-      across both front-end and back-end to create intuitive and engaging
-      experiences.
+      Hi, my name Hilmy Ahmad Haidar, you can call me Haidar. I love turning
+      ideas into functional apps, working across both front-end and back-end to
+      create intuitive and engaging experiences.
     </p>
     <p class="">
       I specialize in smooth user interfaces with React/React Native and
@@ -242,21 +129,24 @@ const certificate = [
   <Sparator />
   <Section title="Educations" class="p-3">
     {
-      education.map((item) => (
-        <div class="flex items-center justify-between gap-3">
-          <div class="p-1.5 flex items-start gap-3">
-            <item.icon size={42} className="text-yellow-500" />
-            <div class="grid grid-cols-1">
-              <h3 class="text-lg lg:text-xl">{item.title}</h3>
-              <p class="text-sm text-muted-foreground">{item.grade}</p>
-              <p class="mt-3 text-sm font-semibold">GPA {item.gpa} / 4.00</p>
+      education.map(({ data }) => {
+        const Icon = icons[data.icon as keyof typeof icons];
+        return (
+          <div class="flex items-center justify-between gap-3">
+            <div class="p-1.5 flex items-start gap-3">
+              <Icon size={42} className="text-yellow-500" />
+              <div class="grid grid-cols-1">
+                <h3 class="text-lg lg:text-xl">{data.title}</h3>
+                <p class="text-sm text-muted-foreground">{data.grade}</p>
+                <p class="mt-3 text-sm font-semibold">GPA {data.gpa} / 4.00</p>
+              </div>
             </div>
+            <p class="font-bold hidden md:block">
+              {data.start} - {data.end}
+            </p>
           </div>
-          <p class="font-bold hidden md:block">
-            {item.start} - {item.end}
-          </p>
-        </div>
-      ))
+        );
+      })
     }
   </Section>
   <Sparator />
@@ -266,17 +156,17 @@ const certificate = [
   <Sparator />
   <Section title="Certificates" class="p-3">
     {
-      certificate.map((item) => (
-        <a class="group" href={item.link}>
+      certificate.map(({ data }) => (
+        <a class="group" href={data.link}>
           <div class="flex items-center gap-3">
             <div class="flex items-start gap-3">
               <div class="max-w-12 max-h-12 rounded-full overflow-hidden">
-                <img src={item.logo} alt="company logo" />
+                <img src={data.logo} alt="company logo" />
               </div>
               <div class="grid grid-cols-1">
-                <h3 class="lg:text-lg group-hover:underline">{item.title}</h3>
-                <p class="text-sm text-muted-foreground">{item.company}</p>
-                <p class="mt-3 text-sm font-semibold">Issued {item.date}</p>
+                <h3 class="lg:text-lg group-hover:underline">{data.title}</h3>
+                <p class="text-sm text-muted-foreground">{data.company}</p>
+                <p class="mt-3 text-sm font-semibold">Issued {data.date}</p>
               </div>
             </div>
           </div>

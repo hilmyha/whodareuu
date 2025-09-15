@@ -15,8 +15,11 @@ interface RoleProps {
 }
 
 interface ExperienceCardProps {
-  company: string;
-  roles: RoleProps[];
+  id: string;
+  data: {
+    company: string;
+    roles: RoleProps[];
+  };
 }
 
 export default function ExperienceCard({
@@ -26,15 +29,15 @@ export default function ExperienceCard({
 }) {
   return (
     <div className="space-y-3">
-      {experiences.map((companyItem, idx) => (
-        <div key={idx} className="screen-line-after">
+      {experiences.map(({ data }) => (
+        <div key={data.company} className="screen-line-after">
           {/* Company Heading */}
-          <h2 className="text-lg font-bold">{companyItem.company}</h2>
+          <h2 className="text-lg font-bold">{data.company}</h2>
 
           {/* Accordion per role */}
           <Accordion type="single" collapsible>
-            {companyItem.roles.map((job, jdx) => (
-              <AccordionItem key={jdx} value={`role-${idx}-${jdx}`}>
+            {data.roles.map((job, jdx) => (
+              <AccordionItem key={job.role} value={`role-${data.company}-${jdx}`}>
                 <AccordionTrigger>
                   <div className="flex items-center gap-3">
                     <div className="rounded-xl bg-muted p-2">

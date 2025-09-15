@@ -1,0 +1,78 @@
+[
+  {
+    "id": 1,
+    "company": "PT. Pedagang Aset Kripto",
+    "roles": [
+      {
+        "role": "Frontend Developer",
+        "start": "Apr 2025",
+        "end": "Present",
+        "tasks": [
+          "Maintaining a web based Exchange system with Laravel Framework.",
+          "Integrated payment gateway APIs to manage fiat deposit and withdrawal flows.",
+          "Integrated external custody APIs for managing crypto asset operations including deposit address generation, balance tracking, and withdrawal execution.",
+          "Integrated Laravel’s job and queue system (backed by Redis) to support a custom-built matching engine for buy/sell order execution.",
+          "Utilized Laravel Horizon for monitoring queued jobs and background processing.",
+          "Implemented client-side interactivity using jQuery AJAX for real-time trading interactions.",
+          "Integrated regulatory APIs include Indonesian Coin Custodian (ICC) for handling crypto asset transactions, Komisi Kliring Indonesia (KKI) for fiat currency transaction compliance, and Central Financial X (CFX) for trade lifecycle processing and regulatory reporting."
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "company": "GaleriMedika",
+    "roles": [
+      {
+        "role": "Fullstack Developer",
+        "start": "Nov 2024",
+        "end": "Mar 2025",
+        "tasks": [
+          "I upgraded a web based E-Commerce with Opencart framework.",
+          "The website i created is an online shopping platform for Galeri Medika's customers, equipped with social login capabilities, a reliable courier delivery system, and a secure payment processing system.",
+          "Develop an internal apps in Galeri Medika with Odoo Framework.",
+          "In Galeri Medika's internal applications, I developed custom modules using Odoo, including a Doctor Scheduling System to manage and display doctor availability across Tangerang and South Tangerang, as well as a Courier Handover Module that ensures package verification before being handed over to couriers based on invoice details."
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "company": "PT. CAZH Teknologi Inovasi",
+    "roles": [
+      {
+        "role": "Fullstack Developer Intern",
+        "start": "Jul 2023",
+        "end": "Sep 2023",
+        "tasks": [
+          "I built a human resource management web based app with Laravel framework with Livewire.",
+          "My human resource management web application is used to manage employee tasks, which is able to manage order process and be able to monitor the order processing process for staff."
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "company": "Institut Teknologi Telkom Purwokerto",
+    "roles": [
+      {
+        "role": "Laboratory Assistant",
+        "start": "2022",
+        "end": "2023",
+        "tasks": [
+          "I teach Database Management System to fellow students here at ITT Purwokerto.",
+          "During teaching, there are a lot of experiences gained, one of which can help other students in learning about database management systems, and practicing leadership for myself."
+        ]
+      },
+      {
+        "role": "Laboratory Assistant",
+        "start": "2021",
+        "end": "2022",
+        "tasks": [
+          "I teach Programming Algorithms to fellow students here at ITT Purwokerto.",
+          "During teaching, there are a lot of experiences gained, one of which can help other students in learning about programming algorithms, and practicing leadership for myself."
+        ]
+      }
+    ]
+  }
+]
