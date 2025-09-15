@@ -1,0 +1,63 @@
+---
+import { SEO } from "astro-seo";
+
+const { title, description } = Astro.props;
+
+interface HeadProps {
+  title: string;
+  description: string;
+  type: string;
+  image: string;
+}
+
+const script = `
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-8YVZM9KHQM");
+`;
+---
+
+<head>
+  <SEO
+    title={title}
+    titleTemplate="%s - Hilmy Haidar"
+    description={description}
+    openGraph={{
+      basic: {
+        title: title,
+        description: description,
+        type: "profile",
+        image: "https://whodareuu.my.id/favicon.svg",
+      } as HeadProps,
+    }}
+    twitter={{
+      creator: "@dareuu__",
+    }}
+  />
+
+  <!-- Google tag (gtag.js) -->
+  <script
+    type="text/partytown"
+    async
+    src={`https://www.googletagmanager.com/gtag/js?id=G-8YVZM9KHQM`}></script>
+  <script type="text/partytown">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-8YVZM9KHQM");
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="description" content={description} />
+  <meta name="generator" content={Astro.generator} />
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  <!-- title -->
+  <title>{title} | Hilmy Haidar</title>
+</head>

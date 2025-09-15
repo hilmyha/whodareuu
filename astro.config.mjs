@@ -12,7 +12,11 @@ export default defineConfig({
   site: "https://whodareuu.my.id",
   integrations: [
     react(),
-    partytown(),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
     sitemap({
       changefreq: "weekly",
       priority: 0.7,

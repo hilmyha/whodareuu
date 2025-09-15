@@ -1,8 +1,10 @@
 ---
+import Head from "@/components/head.astro";
 import Header from "@/components/header.astro";
 import Footer from "@/components/footer.astro";
 import "@/styles/global.css";
-const { title } = Astro.props;
+
+const { title, description } = Astro.props;
 ---
 
 <script is:inline>
@@ -30,14 +32,7 @@ const { title } = Astro.props;
 </script>
 
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <title>Hilmy Haidar - {title}</title>
-  </head>
+  <Head {title} {description} />
   <body class="scroll-smooth antialiased">
     <Header />
     <div class="min-h-screen">
