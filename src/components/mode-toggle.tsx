@@ -9,7 +9,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-export function ModeToggle() {
+interface ModeToggleProps {
+  onChange?: (theme: "light" | "dark" | "system") => void;
+}
+
+export function ModeToggle({ onChange }: ModeToggleProps) {
   const [theme, setThemeState] = React.useState<
     "theme-light" | "dark" | "system"
   >("theme-light");
@@ -25,6 +29,8 @@ export function ModeToggle() {
       (theme === "system" &&
         window.matchMedia("(prefers-color-scheme: dark)").matches);
     document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+
+    onChange?.(theme === "theme-light" ? "light" : theme === "dark" ? "dark" : "system");
   }, [theme]);
 
   return (

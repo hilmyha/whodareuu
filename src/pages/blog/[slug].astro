@@ -3,6 +3,7 @@ import { getCollection, render, type CollectionEntry } from "astro:content";
 import BlogLayout from "@/layouts/blog-layout.astro";
 import Sparator from "@/components/sparator.astro";
 import Section from "@/components/section.astro";
+import Utterances from "@/components/utterances.tsx";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft } from "lucide-react";
 
@@ -42,5 +43,9 @@ const { Content } = await render(entry);
       <Content />
     </article>
   </div>
+  <Sparator />
+  <Section class="p-3">
+    <Utterances client:load />
+  </Section>
   <Sparator />
 </BlogLayout>
