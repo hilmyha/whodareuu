@@ -1,0 +1,37 @@
+---
+import BlogLayout from "@/layouts/blog-layout.astro";
+import Section from "@/components/section.astro";
+import Sparator from "@/components/sparator.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("posts");
+const categories = Array.from(
+  new Set(posts.flatMap((post) => post.data.category))
+);
+---
+
+<BlogLayout title="Categories">
+  <Section class="p-3">
+    <div class="grid md:grid-cols-2 gap-3">
+      {
+        categories.map((category) => (
+          <a
+            href={`/blog/categories/${category}`}
+            class="group flex items-start justify-between gap-3 p-3 border"
+          >
+            <div class="flex items-center gap-4">
+              <div class="grid grid-cols-1">
+                <p class="text-lg font-semibold group-hover:underline capitalize">
+                  {category}
+                </p>
+              </div>
+            </div>
+            <p class="w-5 font-fira">
+              ({posts.filter((p) => p.data.category.includes(category)).length})
+            </p>
+          </a>
+        ))
+      }
+    </div>
+  </Section>
+</BlogLayout>

@@ -1,5 +1,5 @@
 ---
-import BaseLayout from "@/layouts/base-layout.astro";
+import BlogLayout from "@/layouts/blog-layout.astro";
 import Section from "@/components/section.astro";
 import Sparator from "@/components/sparator.astro";
 import { getCollection } from "astro:content";
@@ -10,8 +10,8 @@ const posts = await getCollection("posts", ({ data }) => {
 });
 ---
 
-<BaseLayout title="Blog">
-  <Section title="Haidar's writings" class="mt-14 px-3 py-12">
+<BlogLayout title="Blog">
+  <Section title="Haidar's writings" class="p-3">
     <p class="text-muted-foreground lg:w-1/2">
       I write about the web, programming, and sometimes my life experiences.
       Enjoy reading!
@@ -47,4 +47,4 @@ const posts = await getCollection("posts", ({ data }) => {
       }
     </div>
   </Section>
-</BaseLayout>
+</BlogLayout>

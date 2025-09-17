@@ -1,6 +1,6 @@
 ---
 title: "Membuat API JWT dengan Cookie di Laravel 10"
-category: "Laravel"
+category: "laravel"
 author: hilmy-haidar
 date: 2024-03-12
 description: "Sebuah cara untuk membuat API yang menggunakan JSON Web Token (JWT) untuk autentikasi dan menggunakan Cookie untuk menyimpan token"

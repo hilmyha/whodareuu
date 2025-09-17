@@ -5,7 +5,7 @@ User-agent: *
 Allow: /
 
 Disallow: /cv.pdf
-Disallow: /bnsp=jwd-hilmy-haidar.pdf
+Disallow: /bnsp-jwd-hilmy-haidar.pdf
 
 Sitemap: ${sitemapURL.href}
 `;

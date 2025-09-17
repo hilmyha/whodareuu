@@ -5,7 +5,8 @@ import Sparator from "@/components/sparator.astro";
 import Section from "@/components/section.astro";
 import Utterances from "@/components/utterances.astro";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Folder, Tags } from "lucide-react";
+import Breadcrumbs from "@/components/breadcrumbs";
 
 type Post = { entry: CollectionEntry<"posts"> };
 
@@ -19,15 +20,17 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+
+// related logic
+const posts = await getCollection("posts");
+const related = posts.filter(
+  (p) =>
+    p.data.category.includes(entry.data.category) &&
+    p.data.slug !== entry.data.slug
+);
 ---
 
 <BlogLayout title={entry.data.title}>
-  <Sparator />
-  <Section class="p-3">
-    <div class="flex items-center justify-between">
-      <a href="/blog"> <ArrowLeft size={32} /></a>
-    </div>
-  </Section>
   <Sparator />
   <div class="section container p-3">
     <div class="screen-line-after pb-3 space-x-2">
@@ -39,10 +42,75 @@ const { Content } = await render(entry);
     <p class="text-sm text-muted-foreground py-3 screen-line-after">
       {entry.data.date.toDateString()}
     </p>
-    <article class="prose prose-sm md:prose-lg text-justify min-w-full dark:prose-invert mt-6">
+    <article
+      class="prose prose-sm md:prose-lg text-justify min-w-full dark:prose-invert mt-6"
+    >
       <Content />
     </article>
+    <div class="flex pt-12 pb-3 gap-1 items-center">
+      <Folder size={20} className="mr-3 text-muted-foreground" />
+      {
+        (
+          <a
+            href={`/blog/categories/${entry.data.category}`}
+            class="group flex items-center underline capitalize"
+          >
+            {entry.data.category}
+          </a>
+        )
+      }
+    </div>
+    <div class="flex py-3 gap-1 items-center">
+      <Tags size={20} className="mr-3 text-muted-foreground" />
+      {
+        entry.data.tags.flatMap((tag) => (
+          <a href={`/blog/tags/${tag}`} class="group flex items-center">
+            <Badge
+              variant="outline"
+              className="group-hover:bg-gray-100 capitalize dark:group-hover:bg-gray-800 group-hover:text-gray-900 dark:group-hover:text-gray-50"
+            >
+              {tag}
+            </Badge>
+          </a>
+        ))
+      }
+    </div>
   </div>
+  <Sparator />
+  <Section title="Related Posts" class="p-3">
+    <div class="grid md:grid-cols-2 gap-3">
+      {
+        related.length > 0 ? (
+          related.map((post) => (
+            <a
+              href={`/blog/${post.data.slug}`}
+              class="group flex items-start justify-between gap-3 p-3 border"
+            >
+              <div class="flex items-center gap-4">
+                <div class="grid grid-cols-1">
+                  <p class="text-lg font-semibold group-hover:underline">
+                    {post.data.title}
+                  </p>
+                  <p class="text-sm text-muted-foreground">
+                    {post.data.date.toLocaleDateString(undefined, {
+                      dateStyle: "full",
+                      timeZone: "UTC",
+                    })}
+                  </p>
+                </div>
+              </div>
+              <div class="w-5">
+                <ArrowUpRight size={16} />
+              </div>
+            </a>
+          ))
+        ) : (
+          <div class="text-muted-foreground">No related posts</div>
+        )
+      }
+    </div>
+  </Section>
+
   <Sparator />
   <Section class="p-3">
     <Utterances />

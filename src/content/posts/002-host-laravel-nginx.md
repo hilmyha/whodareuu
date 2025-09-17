@@ -1,6 +1,6 @@
 ---
 title: "Gimana sih cara deploy aplikasi Laravel dengan Nginx di Linux server?"
-category: "Nginx"
+category: "nginx"
 author: hilmy-haidar
 date: 2025-01-04
 description: "Berikut adalah langkah-langkah untuk setup Nginx server untuk deploy aplikasi Laravel kalian di VPS Linux"

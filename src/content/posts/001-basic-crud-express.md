@@ -1,6 +1,6 @@
 ---
 title: "Belajar Basic CRUD dengan ExpressJS dan DrizzleORM"
-category: "ExpressJS"
+category: "expressjs"
 author: hilmy-haidar
 date: 2024-08-10
 description: "Belajar membuat API CRUD sederhana dengan ExpressJS dan DrizzleORM menggunakan Database PostgreSQL"

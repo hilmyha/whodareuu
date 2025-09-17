@@ -5,16 +5,12 @@ import MobileMenu from "@/components/mobile-menu";
 
 const menu = [
   {
-    label: "Portfolio",
-    href: "/",
+    label: "Categories",
+    href: "/blog/categories",
   },
   {
-    label: "Experience",
-    href: "#experience",
-  },
-  {
-    label: "Blogs",
-    href: "/blog",
+    label: "Tags",
+    href: "/blog/tags",
   },
 ];
 ---
@@ -39,7 +35,7 @@ const menu = [
         }
       </div>
 
-      <ModeToggle client:load />
+      <!-- <ModeToggle client:load /> -->
       <div class="md:hidden block">
         <MobileMenu menu={menu} client:load />
       </div>
