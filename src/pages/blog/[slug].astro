@@ -25,8 +25,7 @@ const { Content } = await render(entry);
 const posts = await getCollection("posts");
 const related = posts.filter(
   (p) =>
-    p.data.category.includes(entry.data.category) &&
-    p.data.slug !== entry.data.slug
+    p.data.category === entry.data.category && p.data.slug !== entry.data.slug
 );
 ---
 
