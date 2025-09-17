@@ -36,6 +36,32 @@ const script = `
     twitter={{
       creator: "@dareuu__",
     }}
+    extend={{
+      meta: [
+        {
+          name: "viewport",
+          content: "width=device-width, initial-scale=1",
+        },
+        {
+          name: "description",
+          content: description,
+        },
+        {
+          name: "generator",
+          content: Astro.generator,
+        },
+      ],
+      link: [
+        {
+          rel: "icon",
+          href: "/favicon.svg",
+        },
+        {
+          rel: "sitemap",
+          href: "/sitemap-index.xml",
+        },
+      ],
+    }}
   />
 
   <!-- Google tag (gtag.js) -->
