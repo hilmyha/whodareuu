@@ -9,11 +9,24 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-interface ModeToggleProps {
-  onChange?: (theme: "light" | "dark" | "system") => void;
+function toggleUtterancesTheme() {
+  if (document.querySelector(".utterances-frame")) {
+    const theme =
+      localStorage.getItem("theme") === "light"
+        ? "github-light"
+        : "github-dark";
+    const message = {
+      type: "set-theme",
+      theme,
+    };
+    const iframe = document.querySelector(
+      ".utterances-frame"
+    ) as HTMLIFrameElement; // omit as HTMLIFrameElement if you're wring JS
+    iframe?.contentWindow?.postMessage(message, "https://utteranc.es");
+  }
 }
 
-export function ModeToggle({ onChange }: ModeToggleProps) {
+export function ModeToggle() {
   const [theme, setThemeState] = React.useState<
     "theme-light" | "dark" | "system"
   >("theme-light");
@@ -30,7 +43,9 @@ export function ModeToggle({ onChange }: ModeToggleProps) {
         window.matchMedia("(prefers-color-scheme: dark)").matches);
     document.documentElement.classList[isDark ? "add" : "remove"]("dark");
 
-    onChange?.(theme === "theme-light" ? "light" : theme === "dark" ? "dark" : "system");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+
+    toggleUtterancesTheme();
   }, [theme]);
 
   return (
