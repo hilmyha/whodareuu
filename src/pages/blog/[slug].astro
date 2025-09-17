@@ -30,7 +30,6 @@ const related = posts.filter(
 ---
 
 <BlogLayout title={entry.data.title}>
-  <Sparator />
   <div class="section container p-3">
     <div class="screen-line-after pb-3 space-x-2">
       {entry.data.tags.map((tag) => <Badge>{tag}</Badge>)}
@@ -47,32 +46,39 @@ const related = posts.filter(
       <Content />
     </article>
     <div class="flex pt-12 pb-3 gap-1 items-center">
-      <Folder size={20} className="mr-3 text-muted-foreground" />
-      {
-        (
-          <a
-            href={`/blog/categories/${entry.data.category}`}
-            class="group flex items-center underline capitalize"
-          >
-            {entry.data.category}
-          </a>
-        )
-      }
-    </div>
-    <div class="flex py-3 gap-1 items-center">
-      <Tags size={20} className="mr-3 text-muted-foreground" />
-      {
-        entry.data.tags.flatMap((tag) => (
-          <a href={`/blog/tags/${tag}`} class="group flex items-center">
-            <Badge
-              variant="outline"
-              className="group-hover:bg-gray-100 capitalize dark:group-hover:bg-gray-800 group-hover:text-gray-900 dark:group-hover:text-gray-50"
+      <Folder
+        size={20}
+        className="min-w-5 min-h-5 mr-3 text-muted-foreground"
+      />
+      <div class="flex flex-wrap items-center gap-2">
+        {
+          (
+            <a
+              href={`/blog/categories/${entry.data.category}`}
+              class="group flex items-center underline capitalize"
             >
-              {tag}
-            </Badge>
-          </a>
-        ))
-      }
+              {entry.data.category}
+            </a>
+          )
+        }
+      </div>
+    </div>
+    <div class="flex py-3 gap-1 items-start">
+      <Tags size={20} className="min-w-5 min-h-5 mr-3 text-muted-foreground" />
+      <div class="flex flex-wrap items-center gap-1">
+        {
+          entry.data.tags.flatMap((tag) => (
+            <a href={`/blog/tags/${tag}`} class="group flex items-center">
+              <Badge
+                variant="outline"
+                className="group-hover:bg-gray-100 capitalize dark:group-hover:bg-gray-800 group-hover:text-gray-900 dark:group-hover:text-gray-50"
+              >
+                {tag}
+              </Badge>
+            </a>
+          ))
+        }
+      </div>
     </div>
   </div>
   <Sparator />

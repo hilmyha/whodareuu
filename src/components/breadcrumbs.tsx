@@ -22,7 +22,7 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({ pathname }) => {
       .replace(/\b\w/g, (c) => c.toUpperCase()); // kapitalisasi tiap kata
 
   return (
-    <Breadcrumb>
+    <Breadcrumb className="w-fit">
       <BreadcrumbList className="flex flex-wrap items-center gap-0">
         {/* Home selalu ada */}
         <BreadcrumbItem>
