@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /cv.pdf
-Disallow: /bnsp=jwd-hilmy-haidar.pdf
-
-Sitemap: https://whodareuu.my.id/sitemap-index.xml
