@@ -4,17 +4,29 @@
     "company": "PT. Pedagang Aset Kripto",
     "roles": [
       {
-        "role": "Frontend Developer",
-        "start": "Apr 2025",
+        "role": "Fullstack Developer",
+        "job_type": "Full-Time",
+        "start": "Oct 2025",
         "end": "Present",
         "tasks": [
           "Maintaining a web based Exchange system with Laravel Framework.",
-          "Integrated payment gateway APIs to manage fiat deposit and withdrawal flows.",
-          "Integrated external custody APIs for managing crypto asset operations including deposit address generation, balance tracking, and withdrawal execution.",
-          "Integrated Laravel’s job and queue system (backed by Redis) to support a custom-built matching engine for buy/sell order execution.",
+          "Integrate super strict KYC (Know Your Customer) APIs to automate user identity verification processes, we use Advance AI to verify user identity documents and facial recognition.",
+          "Using python and make it for running as a service on the server to integrate with OJK (Otoritas Jasa Keuangan) for regulatory compliance and reporting related to financial transactions and user activities on the platform. We report daily, weekly, and monthly transactions to OJK."
+        ]
+      },
+      {
+        "role": "Frontend Developer",
+        "job_type": "Contract",
+        "start": "Apr 2025",
+        "end": "Oct 2025",
+        "tasks": [
+          "Maintaining a web based Exchange system with Laravel Framework.",
+          "Integrate payment gateway APIs to manage fiat deposit and withdrawal flows.",
+          "Integrate external custody APIs for managing crypto asset operations including deposit address generation, balance tracking, and withdrawal execution.",
+          "Integrate Laravel’s job and queue system (backed by Redis) to support a custom-built matching engine for buy/sell order execution.",
           "Utilized Laravel Horizon for monitoring queued jobs and background processing.",
           "Implemented client-side interactivity using jQuery AJAX for real-time trading interactions.",
-          "Integrated regulatory APIs include Indonesian Coin Custodian (ICC) for handling crypto asset transactions, Komisi Kliring Indonesia (KKI) for fiat currency transaction compliance, and Central Financial X (CFX) for trade lifecycle processing and regulatory reporting."
+          "Integrate regulatory APIs include Indonesian Coin Custodian (ICC) for handling crypto asset transactions, Komisi Kliring Indonesia (KKI) for fiat currency transaction compliance, and Central Financial X (CFX) for trade lifecycle processing and regulatory reporting."
         ]
       }
     ]
@@ -25,6 +37,7 @@
     "roles": [
       {
         "role": "Fullstack Developer",
+        "job_type": "Contract",
         "start": "Nov 2024",
         "end": "Mar 2025",
         "tasks": [
@@ -42,6 +55,7 @@
     "roles": [
       {
         "role": "Fullstack Developer Intern",
+        "job_type": "Intern",
         "start": "Jul 2023",
         "end": "Sep 2023",
         "tasks": [
@@ -57,6 +71,7 @@
     "roles": [
       {
         "role": "Laboratory Assistant",
+        "job_type": "Part-Time",
         "start": "2022",
         "end": "2023",
         "tasks": [
@@ -66,6 +81,7 @@
       },
       {
         "role": "Laboratory Assistant",
+        "job_type": "Part-Time",
         "start": "2021",
         "end": "2022",
         "tasks": [

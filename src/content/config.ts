@@ -59,6 +59,7 @@ export const collections = {
       roles: z.array(
         z.object({
           role: z.string(),
+          job_type: z.string(),
           start: z.string(),
           end: z.string(),
           tasks: z.array(z.string()),

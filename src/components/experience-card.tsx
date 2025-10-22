@@ -9,6 +9,7 @@ import { Briefcase } from "lucide-react";
 
 interface RoleProps {
   role: string;
+  job_type: string;
   start: string;
   end: string;
   tasks: string[];
@@ -44,7 +45,10 @@ export default function ExperienceCard({
                       <Briefcase size={14} />
                     </div>
                     <div>
-                      <p className="font-medium">{job.role}</p>
+                      <div className="flex items-center gap-1">
+                        <p className="font-medium">{job.role}</p> 
+                        <p className="text-muted-foreground text-sm">({job.job_type})</p>
+                      </div>
                       <p className="text-muted-foreground text-sm">
                         {job.start} - {job.end}
                       </p>

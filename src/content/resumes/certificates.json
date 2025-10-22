@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "logo": "https://media.licdn.com/dms/image/v2/C560BAQFBZUziVzn6KA/company-logo_200_200/company-logo_200_200/0/1630642701809?e=1760572800&v=beta&t=wO4gxfBRFZg2Dg14U1mIWdayJFz3-ZS1lYm955oy3aQ",
+    "logo": "https://media.licdn.com/dms/image/v2/C560BAQFBZUziVzn6KA/company-logo_100_100/company-logo_100_100/0/1630642701810?e=1762992000&v=beta&t=PMCcWfgQCDxp4ocVBEDUYvj5Cjzy-I0IrTV1dAXLQ7E",
     "title": "Junior Web Developer",
     "company": "Badan Nasional Sertiifikasi Profesi (BNSP)",
     "date": "Jan 2024",
@@ -9,7 +9,7 @@
   },
   {
     "id": 2,
-    "logo": "https://media.licdn.com/dms/image/v2/D560BAQGgNsF5f_M0NA/company-logo_200_200/company-logo_200_200/0/1689865136313/coding_studio_id_logo?e=1760572800&v=beta&t=7STn4majWMtqaj8Ss1wrxifCGXo5oux2zpswGQds1Z8",
+    "logo": "https://member.codingstudio.id/images/common/logo/codingstudio.svg",
     "title": "Mahir Membuat Website dengan Laravel 9",
     "company": "Coding Studio",
     "date": "May 2023",
@@ -17,7 +17,7 @@
   },
   {
     "id": 3,
-    "logo": "https://media.licdn.com/dms/image/v2/D560BAQGgNsF5f_M0NA/company-logo_200_200/company-logo_200_200/0/1689865136313/coding_studio_id_logo?e=1760572800&v=beta&t=7STn4majWMtqaj8Ss1wrxifCGXo5oux2zpswGQds1Z8",
+    "logo": "https://member.codingstudio.id/images/common/logo/codingstudio.svg",
     "title": "Mahir membuat website responsif",
     "company": "Coding Studio",
     "date": "Aug 2021",

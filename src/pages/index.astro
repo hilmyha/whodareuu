@@ -21,6 +21,7 @@ import {
   Github,
   GraduationCap,
 } from "lucide-react";
+import Informations from "@/components/informations";
 
 const icons = {
   ArrowUpRight,
@@ -161,7 +162,7 @@ const stack = [
           <div class="flex items-center gap-3">
             <div class="flex items-start gap-3">
               <div class="max-w-12 max-h-12 rounded-full overflow-hidden">
-                <img src={data.logo} alt="company logo" />
+                <img src={data.logo} alt="company logo" class="w-full h-full" />
               </div>
               <div class="grid grid-cols-1">
                 <h3 class="lg:text-lg group-hover:underline">{data.title}</h3>
