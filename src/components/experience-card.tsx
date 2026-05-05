@@ -38,10 +38,10 @@ export default function ExperienceCard({
           {/* Accordion per role */}
           <Accordion type="single" collapsible>
             {data.roles.map((job, jdx) => (
-              <AccordionItem key={job.role} value={`role-${data.company}-${jdx}`}>
+              <AccordionItem key={job.role} value={`role-${data.company}-${jdx}`} className="group">
                 <AccordionTrigger>
                   <div className="flex items-center gap-3">
-                    <div className="rounded-xl bg-muted p-2">
+                    <div className="rounded-xl bg-muted transition-colors group-data-[state=open]:bg-stone-300 dark:group-data-[state=open]:bg-stone-950 p-2">
                       <Briefcase size={14} />
                     </div>
                     <div>

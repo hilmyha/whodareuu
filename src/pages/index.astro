@@ -11,6 +11,10 @@ const certificate = await getCollection("certificates");
 const social = await getCollection("socials");
 const contact = await getCollection("contacts");
 const education = await getCollection("educations");
+const projects = await getCollection("projects");
+const posts = await getCollection("posts", ({ data }) => {
+  return data.draft !== true;
+});
 
 import {
   ArrowUpRight,
@@ -22,6 +26,7 @@ import {
   GraduationCap,
 } from "lucide-react";
 import Informations from "@/components/informations";
+import ProjectCard from "@/components/project-card";
 
 const icons = {
   ArrowUpRight,
@@ -86,7 +91,10 @@ const stack = [
                   <p class="text-sm text-muted-foreground">{data.username}</p>
                 </div>
               </div>
-              <ArrowUpRight size={16} />
+              <ArrowUpRight
+                size={16}
+                className="transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"
+              />
             </a>
           );
         })
@@ -161,7 +169,11 @@ const stack = [
     <ExperienceCard experiences={experience} client:load />
   </Section>
   <Sparator />
-  <Section title="Certificates" class="p-3">
+  <Section title="Projects" id="projects" class="p-3">
+    <ProjectCard projects={projects} client:load/>
+  </Section>
+  <Sparator />
+  <Section title="Certificates" id="certificates" class="p-3">
     {
       certificate.reverse().map(({ data }) => (
         <a class="group" href={data.link}>
@@ -186,6 +198,38 @@ const stack = [
         </a>
       ))
     }
+  </Section>
+  <Sparator />
+  <Section title="Latest Posts" class="p-3">
+    <div class="grid md:grid-cols-2 gap-3">
+      {
+        posts
+          .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+          .slice(0, 2).map((post) => (
+            <a
+              href={`/blog/${post.data.slug}`}
+              class="group flex items-start justify-between gap-3 p-3 border"
+            >
+              <div class="flex items-center gap-4">
+                <div class="grid grid-cols-1">
+                  <p class="text-lg font-semibold group-hover:underline">
+                    {post.data.title}
+                  </p>
+                  <p class="text-sm text-muted-foreground">
+                    {post.data.date.toLocaleDateString(undefined, {
+                      dateStyle: "full",
+                      timeZone: "UTC",
+                    })}
+                  </p>
+                </div>
+              </div>
+              <div class="w-5">
+                <ArrowUpRight size={16} />
+              </div>
+            </a>
+          ))
+      }
+    </div>
   </Section>
   <Sparator />
 </BaseLayout>

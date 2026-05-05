@@ -63,8 +63,21 @@ export const collections = {
           start: z.string(),
           end: z.string(),
           tasks: z.array(z.string()),
-        })
+        }),
       ),
+    }),
+  }),
+
+  projects: defineCollection({
+    loader: file("src/content/resumes/projects.json"),
+    schema: z.object({
+      id: z.number(),
+      title: z.string(),
+      slug: z.string(),
+      github: z.string(),
+      description: z.string(),
+      features: z.array(z.string()),
+      technologies: z.array(z.string()),
     }),
   }),
 

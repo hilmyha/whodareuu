@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Yuhdolan",
+    "slug": "yuhdolan",
+    "github": "https://github.com/hilmyha/yuhdolanpwt",
+    "description": "Intoducing Yuhdolan - a travel and tourism information website that provides a variety of travel destinations and tourism information. It also provides a platform for users to share their travel experiences and reviews. This project is a personal project on my campus. I made to learn more about Laravel and Tailwind CSS. I also made this project to help people who want to travel to find information about tourist attractions and culinary in Indonesia.",
+    "features": [
+      "Search destinations and culinary",
+      "Reviewing the destination",
+      "Make some article"
+    ],
+    "technologies": ["Laravel", "Tailwind CSS", "MySQL"]
+  },
+  {
+    "id": 2,
+    "title": "Cazh Services",
+    "slug": "cazh-services",
+    "github": "https://github.com/hilmyha/queit",
+    "description": "Intoducing Cazh Service - Cazh Service is an application to manage employee tasks. This application has features to manage tasks, services, roles, and users. This project is a internship project. I made to learn more about Laravel and Tailwind CSS. I also made this project to help people who want to manage their employee tasks. ",
+    "features": [
+      "Manage tasks",
+      "Manage services",
+      "Manage roles",
+      "Manage users"
+    ],
+    "technologies": ["Laravel", "Livewire", "Tailwind CSS", "MariaDB"]
+  },
+  {
+    "id": 3,
+    "title": "Taman Gading Connect (Under remake)",
+    "slug": "taman-gading-connect",
+    "github": "https://github.com/hilmyha/tg-connect-v2",
+    "description": "Intoducing TG Connect - a monitoring and data collection system that provides a variety of data collection and monitoring information. It also provides a platform for users to share their reporting and information. This project is a final project on my campus. I made to learn more about React Native and Laravel REST API. I also made this project to help people who want to monitoring, sharing a report and information. ",
+    "features": ["Monitoring data", "Collecting data", "Sharing report"],
+    "technologies": ["React Native", "Laravel"]
+  }
+]
