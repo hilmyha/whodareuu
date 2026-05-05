@@ -39,18 +39,20 @@ const { title, description = "Just a personal website" } = Astro.props;
 <html lang="en">
   <Head {title} {description} />
   <body class="scroll-smooth antialiased relative">
-    <Header />
-    <div class="min-h-screen">
-      <Section class="mt-14 px-3 py-4">
-        <Breadcrumbs client:load pathname={pathname} />
-      </Section>
-      <Sparator />
-      <slot />
-    </div>
-    <Footer />
-    <div class="fixed right-4 bottom-4 z-30">
-      <ScrollToTop client:load />
-      <ModeToggle client:load />
+    <div class="overflow-hidden">
+      <Header />
+      <div class="min-h-screen">
+        <Section class="mt-14 px-3 py-4">
+          <Breadcrumbs client:load pathname={pathname} />
+        </Section>
+        <Sparator />
+        <slot />
+      </div>
+      <Footer />
+      <div class="fixed right-4 bottom-4 z-30">
+        <ScrollToTop client:load />
+        <ModeToggle client:load />
+      </div>
     </div>
   </body>
 </html>

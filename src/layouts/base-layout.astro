@@ -44,11 +44,14 @@ const posts = await getCollection("posts", ({ data }) => {
 <html lang="en">
   <Head {title} {description} />
   <body class="scroll-smooth antialiased">
-    <!-- <Informations postDate={latestPost?.data.date} /> -->
-    <Header />
-    <div class="min-h-screen">
-      <slot />
+    <div class="overflow-hidden">
+      
+      <!-- <Informations postDate={latestPost?.data.date} /> -->
+      <Header />
+      <div class="min-h-screen">
+        <slot />
+      </div>
+      <Footer />
     </div>
-    <Footer />
   </body>
 </html>
