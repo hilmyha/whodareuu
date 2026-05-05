@@ -157,7 +157,7 @@ const stack = [
   <Sparator />
   <Section title="Certificates" class="p-3">
     {
-      certificate.map(({ data }) => (
+      certificate.reverse().map(({ data }) => (
         <a class="group" href={data.link}>
           <div class="flex items-center gap-3">
             <div class="flex items-start gap-3">
