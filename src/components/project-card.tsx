@@ -6,12 +6,14 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
-import { ListCheck } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ListCheck, Github } from "lucide-react";
 
 interface ProjectCardProps {
   id: string;
   data: {
     title: string;
+    url: string;
     slug: string;
     github: string;
     description: string;
@@ -27,7 +29,7 @@ export default function ProjectCard({
 }) {
   return (
     <div className="space-y-3">
-      {projects.map(({ data }) => (
+      {projects.slice().reverse().map(({ data }) => (
         <div key={data.title} className="screen-line-after">
           {/* Company Heading */}
           <h2 className="text-lg font-bold">{data.title}</h2>
@@ -64,14 +66,34 @@ export default function ProjectCard({
                   ))}
                 </div>
 
-                {/* Github */}
-                <a
-                  href={data.github}
-                  className="block mt-3 text-sm underline"
-                  target="_blank"
-                >
-                  View Repository
-                </a>
+                <div className="flex items-center gap-2 mt-8">
+                  {/* Github */}
+                  <Button variant={"outline"} size={"sm"} asChild>
+                    <a
+                      href={data.github}
+                      target="_blank"
+                    >
+                      <Github size={24} />
+                      View Repository
+                    </a>
+                  </Button>
+
+                  {data.url != "" ? (
+                    <Button variant={"secondary"} size={"sm"} asChild>
+                      <a
+                        href={data.url}
+                        className="relative"
+                        target="_blank"
+                      >
+                        <span className="absolute -top-1 -right-1 flex h-3 w-3">
+                          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+                          <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500"></span>
+                        </span>
+                        Project Showcase
+                      </a>
+                    </Button>
+                  ) : null}
+                </div>
               </AccordionContent>
             </AccordionItem>
           </Accordion>

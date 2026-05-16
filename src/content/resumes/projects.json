@@ -2,6 +2,7 @@
   {
     "id": 1,
     "title": "Yuhdolan",
+    "url": "",
     "slug": "yuhdolan",
     "github": "https://github.com/hilmyha/yuhdolanpwt",
     "description": "Intoducing Yuhdolan - a travel and tourism information website that provides a variety of travel destinations and tourism information. It also provides a platform for users to share their travel experiences and reviews. This project is a personal project on my campus. I made to learn more about Laravel and Tailwind CSS. I also made this project to help people who want to travel to find information about tourist attractions and culinary in Indonesia.",
@@ -15,6 +16,7 @@
   {
     "id": 2,
     "title": "Cazh Services",
+    "url": "",
     "slug": "cazh-services",
     "github": "https://github.com/hilmyha/queit",
     "description": "Intoducing Cazh Service - Cazh Service is an application to manage employee tasks. This application has features to manage tasks, services, roles, and users. This project is a internship project. I made to learn more about Laravel and Tailwind CSS. I also made this project to help people who want to manage their employee tasks. ",
@@ -29,10 +31,57 @@
   {
     "id": 3,
     "title": "Taman Gading Connect (Under remake)",
+    "url": "",
     "slug": "taman-gading-connect",
     "github": "https://github.com/hilmyha/tg-connect-v2",
     "description": "Intoducing TG Connect - a monitoring and data collection system that provides a variety of data collection and monitoring information. It also provides a platform for users to share their reporting and information. This project is a final project on my campus. I made to learn more about React Native and Laravel REST API. I also made this project to help people who want to monitoring, sharing a report and information. ",
     "features": ["Monitoring data", "Collecting data", "Sharing report"],
-    "technologies": ["React Native", "Laravel"]
+    "technologies": ["React Native", "Laravel", "MariaDB"]
+  },
+  {
+    "id": 4,
+    "title": "Personal Portfolio",
+    "url": "https://whodareuu.my.id",
+    "slug": "personal-portfolio",
+    "github": "https://github.com/hilmyha/whodareuu",
+    "description": "A personal portfolio website built with Astro using Static Site Generation (SSG) for fast performance and SEO optimization. This platform showcases my professional experience, projects, certificates, technical skills, downloadable CV, and personal blog posts in a clean and responsive interface.",
+    "features": [
+      "Showcase professional experiences and technical projects",
+      "Display certificates and achievements",
+      "Downloadable CV and resume section",
+      "Personal blogging platform",
+      "SEO-friendly static site generation with Astro",
+      "Responsive and modern UI design"
+    ],
+    "technologies": [
+      "AstroJS",
+      "Tailwind CSS",
+      "Markdown",
+      "Partytown",
+      "Astro SEO",
+      "Netlify"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Everchar",
+    "url": "https://everchar.whodareuu.my.id",
+    "slug": "everchar",
+    "github": "https://github.com/hilmyha/everchar",
+    "description": "A personal project website, inspired by Linktree, designed for creating profile pages to share social media links, personal websites, and other online platforms in one place. Built with a modern full-stack architecture for scalability and performance.",
+    "features": [
+      "Add and manage links",
+      "Responsive UI",
+      "Hosted on Vercel",
+      "PostgreSQL database integration"
+    ],
+    "technologies": [
+      "Next.js",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "PostgreSQL",
+      "NeonDB",
+      "Vercel"
+    ]
   }
 ]

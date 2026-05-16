@@ -73,6 +73,7 @@ export const collections = {
     schema: z.object({
       id: z.number(),
       title: z.string(),
+      url: z.string(),
       slug: z.string(),
       github: z.string(),
       description: z.string(),
